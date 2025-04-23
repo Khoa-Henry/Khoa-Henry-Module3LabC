@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module3LabC.MainPage">
+
+    <StackLayout Padding="20" Spacing="25" VerticalOptions="Center">
+        <Image x:Name="QuestionImage" HeightRequest="200" Aspect="AspectFit" />
+        <Label x:Name="QuestionText" FontSize="20" TextColor="White" HorizontalTextAlignment="Center" />
+
+        <StackLayout x:Name="AnswerButtons" Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+            <Button Text="True" Clicked="OnTrueClicked" />
+            <Button Text="False" Clicked="OnFalseClicked" />
+        </StackLayout>
+
+        <Image x:Name="ResultImage" IsVisible="False" HeightRequest="200" Aspect="AspectFit" />
+        <Label x:Name="ResultText" IsVisible="False" FontSize="22" TextColor="White" HorizontalTextAlignment="Center" />
+    </StackLayout>
+
+</ContentPage>
