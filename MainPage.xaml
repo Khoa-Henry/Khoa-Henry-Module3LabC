@@ -4,7 +4,6 @@
              x:Class="Module3LabC.MainPage">
 
     <StackLayout Padding="20" Spacing="25" VerticalOptions="CenterAndExpand">
-        <!-- Quiz Card with PanGesture -->
         <Frame x:Name="Card"
                CornerRadius="20"
                HasShadow="True"
@@ -18,14 +17,14 @@
                 <Label x:Name="QuestionText" FontSize="20" TextColor="Black"
                        HorizontalTextAlignment="Center" VerticalOptions="End" Margin="10"/>
                 <Grid.GestureRecognizers>
+                    <!-- Quick google search said that Pan is better than swipe when you want more smooth drag/rotate swipe effect -->
                     <PanGestureRecognizer PanUpdated="OnPanUpdated" />
                 </Grid.GestureRecognizers>
             </Grid>
         </Frame>
 
-        <!-- Results -->
         <Image x:Name="ResultImage" IsVisible="False" HeightRequest="200" Aspect="AspectFit" />
-        <Label x:Name="ResultText" IsVisible="False" FontSize="22" TextColor="White" HorizontalTextAlignment="Center" />
+        <Label x:Name="ResultText" IsVisible="False" FontSize="22" TextColor="white" HorizontalTextAlignment="Center" />
 
         <Button x:Name="RestartButton"
                 Text="Restart Quiz"

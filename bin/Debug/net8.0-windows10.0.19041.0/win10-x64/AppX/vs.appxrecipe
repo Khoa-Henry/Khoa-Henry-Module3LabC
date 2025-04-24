@@ -29,7 +29,7 @@
     <AppXManifest Include="C:\School\Mobile Dev\Module3LabC\Module3LabC\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-04-24T03:44:35.587</Modified>
+      <Modified>2025-04-24T03:48:57.974</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\School\Mobile Dev\Module3LabC\Module3LabC\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Module3LabC.dll">
       <PackagePath>Module3LabC.dll</PackagePath>
-      <Modified>2025-04-24T03:44:35.380</Modified>
+      <Modified>2025-04-24T03:48:57.747</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\School\Mobile Dev\Module3LabC\Module3LabC\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Module3LabC.exe</PackagePath>
-      <Modified>2025-04-24T03:44:35.385</Modified>
+      <Modified>2025-04-24T03:48:57.752</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\School\Mobile Dev\Module3LabC\Module3LabC\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
