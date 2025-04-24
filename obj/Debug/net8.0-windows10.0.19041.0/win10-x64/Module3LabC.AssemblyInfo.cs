@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Module3LabC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+0b5773391237314c62323924f04a86b46b048c25")]
 [assembly: System.Reflection.AssemblyProductAttribute("Module3LabC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Module3LabC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

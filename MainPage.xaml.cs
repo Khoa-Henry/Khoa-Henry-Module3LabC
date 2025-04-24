@@ -4,6 +4,7 @@
     {
         private int currentQuestionIndex = 0;
         private int score = 0;
+        private double xOffset = 0;
 
         private List<(string Question, string ImagePath)> questions = new()
     {
@@ -27,6 +28,11 @@
                 var q = questions[currentQuestionIndex];
                 QuestionText.Text = q.Question;
                 QuestionImage.Source = q.ImagePath;
+
+                // Reset card position and rotation
+                Card.TranslationX = 0;
+                Card.Rotation = 0;
+                xOffset = 0;
             }
             else
             {
@@ -34,24 +40,45 @@
             }
         }
 
-        private void OnTrueClicked(object sender, EventArgs e)
+        private void OnPanUpdated(object sender, PanUpdatedEventArgs e)
         {
-            score++;
-            currentQuestionIndex++;
-            LoadQuestion();
+            switch (e.StatusType)
+            {
+                case GestureStatus.Running:
+                    xOffset = e.TotalX;
+                    Card.TranslationX = xOffset;
+                    break;
+
+                case GestureStatus.Completed:
+                    if (xOffset > 100)
+                    {
+                        OnAnswerSelected(true);  // Swiped right
+                    }
+                    else if (xOffset < -100)
+                    {
+                        OnAnswerSelected(false); // Swiped left
+                    }
+                    else
+                    {
+                        // Snap back if not far enough
+                        Card.TranslateTo(0, 0, 250, Easing.SpringOut);
+                    }
+                    break;
+            }
         }
 
-        private void OnFalseClicked(object sender, EventArgs e)
+        private void OnAnswerSelected(bool isTrue)
         {
+            if (isTrue)
+                score++;
+
             currentQuestionIndex++;
             LoadQuestion();
         }
 
         private void ShowResult()
         {
-            AnswerButtons.IsVisible = false;
-            QuestionText.IsVisible = false;
-            QuestionImage.IsVisible = false;
+            Card.IsVisible = false;
 
             string result;
             string imagePath;
@@ -77,6 +104,24 @@
 
             ResultText.IsVisible = true;
             ResultImage.IsVisible = true;
+            RestartButton.IsVisible = true;
+        }
+
+        private void OnRestartClicked(object sender, EventArgs e)
+        {
+            currentQuestionIndex = 0;
+            score = 0;
+
+            ResultText.IsVisible = false;
+            ResultImage.IsVisible = false;
+            RestartButton.IsVisible = false;
+            Card.IsVisible = true;
+
+            // Reset card transform
+            Card.TranslationX = 0;
+            Card.Rotation = 0;
+
+            LoadQuestion();
         }
     }
 

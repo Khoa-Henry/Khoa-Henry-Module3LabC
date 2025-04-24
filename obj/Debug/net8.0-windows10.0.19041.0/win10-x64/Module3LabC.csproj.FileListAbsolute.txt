@@ -180,3 +180,4 @@ C:\School\Mobile Dev\Module3LabC\Module3LabC\obj\Debug\net8.0-windows10.0.19041.
 C:\School\Mobile Dev\Module3LabC\Module3LabC\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\question3.scale-100.jpg
 C:\School\Mobile Dev\Module3LabC\Module3LabC\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\question4.scale-100.jpg
 C:\School\Mobile Dev\Module3LabC\Module3LabC\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\question5.scale-100.jpg
+C:\School\Mobile Dev\Module3LabC\Module3LabC\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Module3LabC.sourcelink.json

@@ -3,17 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Module3LabC.MainPage">
 
-    <StackLayout Padding="20" Spacing="25" VerticalOptions="Center">
-        <Image x:Name="QuestionImage" HeightRequest="200" Aspect="AspectFit" />
-        <Label x:Name="QuestionText" FontSize="20" TextColor="White" HorizontalTextAlignment="Center" />
+    <StackLayout Padding="20" Spacing="25" VerticalOptions="CenterAndExpand">
+        <!-- Quiz Card with PanGesture -->
+        <Frame x:Name="Card"
+               CornerRadius="20"
+               HasShadow="True"
+               BackgroundColor="White"
+               HeightRequest="350"
+               WidthRequest="300"
+               HorizontalOptions="Center">
 
-        <StackLayout x:Name="AnswerButtons" Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
-            <Button Text="True" Clicked="OnTrueClicked" />
-            <Button Text="False" Clicked="OnFalseClicked" />
-        </StackLayout>
+            <Grid>
+                <Image x:Name="QuestionImage" Aspect="AspectFit" HeightRequest="200"/>
+                <Label x:Name="QuestionText" FontSize="20" TextColor="Black"
+                       HorizontalTextAlignment="Center" VerticalOptions="End" Margin="10"/>
+                <Grid.GestureRecognizers>
+                    <PanGestureRecognizer PanUpdated="OnPanUpdated" />
+                </Grid.GestureRecognizers>
+            </Grid>
+        </Frame>
 
+        <!-- Results -->
         <Image x:Name="ResultImage" IsVisible="False" HeightRequest="200" Aspect="AspectFit" />
         <Label x:Name="ResultText" IsVisible="False" FontSize="22" TextColor="White" HorizontalTextAlignment="Center" />
+
+        <Button x:Name="RestartButton"
+                Text="Restart Quiz"
+                Clicked="OnRestartClicked"
+                IsVisible="False"
+                HorizontalOptions="Center"
+                BackgroundColor="#6200EE"
+                TextColor="White"
+                CornerRadius="12"
+                Padding="10,5"/>
     </StackLayout>
 
 </ContentPage>
